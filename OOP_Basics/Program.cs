@@ -11,9 +11,34 @@ namespace OOP_Basics
     {
         public class Vehicle
         {
-            public string color;
-            public string brand;
-            public string type;
+            private string color;
+            private string brand;
+            private string type;
+            
+            public Vehicle(string color, string brand, string type)
+            {
+                this.color = color;
+                this.brand = brand;
+                this.type = type;
+            }
+
+            public string GetColor()
+            {
+                return this.color;
+            }
+            public string GetBrand()
+            {
+                return this.brand;
+            }
+            public string GetType()
+            {
+                return this.type;
+            }
+
+            public void SetColor(string color)
+            {
+                this.color = color;
+            }
             public void Move()
             {
                 if(this.type == "Ship")
@@ -46,25 +71,17 @@ namespace OOP_Basics
         }
         static void Main(string[] args)
         {
-            Vehicle car = new Vehicle();
-            Vehicle ship = new Vehicle();
-            Vehicle bike = new Vehicle();
-
-            car.type = "Car";
-            car.brand = "Audi";
-            car.color = "Grey";
-
-            ship.type = "Ship";
-            ship.brand = "Audi";
-            ship.color = "White";
-
-            bike.type = "Bike";
-            bike.brand = "Kawasaki";
-            bike.color = "Kawasaki Green";
+            Vehicle car = new Vehicle("White", "Audi", "Car");
+            Vehicle ship = new Vehicle("Red", "Ship Brand", "Ship");
+            Vehicle bike = new Vehicle("Pink", "Csepel", "Bike");            
 
             car.Move();
             ship.Move();
-            bike.Move();
+            bike.Move();            
+            Console.WriteLine($"Brand property: {car.GetBrand()}");
+            Console.WriteLine($"Car color: {car.GetColor()}");
+            car.SetColor("Black");
+            Console.WriteLine($"Car color: {car.GetColor()}");
 
             /*
             Console.WriteLine(GreetTheUser("Béla"));
