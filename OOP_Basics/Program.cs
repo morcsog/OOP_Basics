@@ -11,9 +11,9 @@ namespace OOP_Basics
     {
         public class Vehicle
         {
-            private string color;
-            private string brand;
-            private string type;
+            public string color { get; private set; }
+            public string brand;
+            public string type;
             
             public Vehicle(string color, string brand, string type)
             {
@@ -22,10 +22,6 @@ namespace OOP_Basics
                 this.type = type;
             }
 
-            public string GetColor()
-            {
-                return this.color;
-            }
             public string GetBrand()
             {
                 return this.brand;
@@ -79,9 +75,9 @@ namespace OOP_Basics
             ship.Move();
             bike.Move();            
             Console.WriteLine($"Brand property: {car.GetBrand()}");
-            Console.WriteLine($"Car color: {car.GetColor()}");
+            Console.WriteLine(car.color);
             car.SetColor("Black");
-            Console.WriteLine($"Car color: {car.GetColor()}");
+            Console.WriteLine(car.color);            
 
             /*
             Console.WriteLine(GreetTheUser("Béla"));
